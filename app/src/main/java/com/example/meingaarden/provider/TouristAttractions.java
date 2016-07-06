@@ -43,27 +43,14 @@ import java.util.Map;
 public class TouristAttractions extends PreferenceActivity {
 
     public static final String CITY_SYDNEY = "Sydney";
-    public static final String CITY_AHRENSBURG = "Ahrensburg";  // von flo
     public static final String CITY_KIEL = "Kiel";  // von flo
-    public static final String CITY_KIEL_GAARDEN = "Kiel-Gaarden";  // von flo
-    public static final String CITY_LABOE = "LABOE";  // von flo
-    public static final String CITY_LÜTJENBURG = "Lütjenburg";  // von flo
-    public static final String CITY_WELLSEE = "Wellsee";  // von flo
 
     public static final String TEST_CITY = CITY_SYDNEY;
 
-    private static final float TRIGGER_RADIUS = 5000; // 2KM
-    public static final String TEST = "pref_key_trigger_radius";
-    private static final float TRIGGER_RADIUS3 = Long.getLong(TEST, 2000);
-    private static final Long TRIGGER_RADIUS2 = Long.getLong("pref_key_trigger_radius");
-    //Long test = Long.valueOf("pref_key_gps_duration");
+    private static final float TRIGGER_RADIUS = 5000; // 5KM
+
     SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
      protected Long test = Long.valueOf(sharedPref.getString("pref_key_trigger_radius", "2000"));
-    //private static final Long TRIGGER_RADIUS2 = test;
-    private float TRIGGER_RADIUS4 = test;
-
-
-    //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MeinGaarden.this);
 
 
     private static final int TRIGGER_TRANSITION = Geofence.GEOFENCE_TRANSITION_ENTER |
@@ -72,12 +59,7 @@ public class TouristAttractions extends PreferenceActivity {
 
     public static final Map<String, LatLng> CITY_LOCATIONS = new HashMap<String, LatLng>() {{
         put(CITY_SYDNEY, new LatLng(-33.873651, 151.2068896));
-        //put(CITY_AHRENSBURG, new LatLng(53.67357, 10.2358)); // Rathaus
         put(CITY_KIEL, new LatLng(54.32262, 10.14784)); // Rathaus
-        //put(CITY_KIEL_GAARDEN, new LatLng(54.31146231, 10.14662517)); // Vinetaplatz
-        //put(CITY_LABOE, new LatLng(54.41185, 10.23121)); // Marine-Ehrenmal
-        //put(CITY_LÜTJENBURG, new LatLng(54.29567, 10.5901)); // Bismarckturm
-        //put(CITY_WELLSEE, new LatLng(54.2843, 10.15473)); // EMC
     }};
 
     /**
@@ -98,17 +80,6 @@ public class TouristAttractions extends PreferenceActivity {
                         ));
                     }});
 
-                put(CITY_AHRENSBURG, new ArrayList<Attraction>() {{
-                    add(new Attraction(
-                            "Sydney Opera House",
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti.",
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
-                            Uri.parse("https://lh5.googleusercontent.com/-7fb5ybQhUbo/VGLWjIL4RmI/AAAAAAAAACM/2jLe_msj_tk/w600-no/IMG_0049.JPG"),
-                            Uri.parse("https://lh3.googleusercontent.com/-EFEw6s7mT6I/VGLkCH4Xt4I/AAAAAAAAADY/ZlznhaQvb8E/w600-no/DSC_2775.JPG"),
-                            new LatLng(-33.858667, 151.214028),
-                            CITY_AHRENSBURG
-                    ));
-                }});
 
                 put(CITY_KIEL, new ArrayList<Attraction>() {{
 
@@ -176,8 +147,8 @@ public class TouristAttractions extends PreferenceActivity {
 
                     add(new Attraction(
                             "Jugendherberge",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen.",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Günstige Schlafmöglichkeit in Kiel.",
+                            "Günstige Schlafmöglichkeit in Kiel.",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/DJH_Kiel.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/DJH_Kiel.png"),
                             new LatLng(54.31383, 10.14248),
@@ -186,7 +157,7 @@ public class TouristAttractions extends PreferenceActivity {
 
                     add(new Attraction(
                             "Schwimmhalle Gaarden",
-                            "Badespass in der Johannesstrasse 8.",
+                            "Badespass in der Johannesstr. 8.",
                             "Badespass in der Johannesstrasse 8.",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Schwimmhalle_Gaarden.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Schwimmhalle_Gaarden.png"),
@@ -213,17 +184,7 @@ public class TouristAttractions extends PreferenceActivity {
                             new LatLng(54.30699, 10.14604),
                             CITY_KIEL
                     ));
-                    /**
-                    add(new Attraction(
-                            "Subrosa",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen.",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
-                            Uri.parse("https://lh5.googleusercontent.com/-7fb5ybQhUbo/VGLWjIL4RmI/AAAAAAAAACM/2jLe_msj_tk/w600-no/IMG_0049.JPG"),
-                            Uri.parse("https://lh3.googleusercontent.com/-EFEw6s7mT6I/VGLkCH4Xt4I/AAAAAAAAADY/ZlznhaQvb8E/w600-no/DSC_2775.JPG"),
-                            new LatLng(54.31458, 10.14903),
-                            CITY_KIEL
-                    ));
-                    */
+
                     add(new Attraction(
                             "Gemeinschaftsschule Am Brook",
                             "Fröbelschule - Erbaut 1910 vom Städtischen Hochbauamt.",
@@ -233,17 +194,7 @@ public class TouristAttractions extends PreferenceActivity {
                             new LatLng(54.30573, 10.14507),
                             CITY_KIEL
                     ));
-                    /**
-                    add(new Attraction(
-                            "Räucherei",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen.",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
-                            Uri.parse("https://lh5.googleusercontent.com/-7fb5ybQhUbo/VGLWjIL4RmI/AAAAAAAAACM/2jLe_msj_tk/w600-no/IMG_0049.JPG"),
-                            Uri.parse("https://lh3.googleusercontent.com/-EFEw6s7mT6I/VGLkCH4Xt4I/AAAAAAAAADY/ZlznhaQvb8E/w600-no/DSC_2775.JPG"),
-                            new LatLng(54.30776, 10.14514),
-                            CITY_KIEL
-                    ));
-                    */
+
                     add(new Attraction(
                             "Medusa",
                             "Im Medusa finden regelmäßig private und öffentliche Veranstaltungen statt.",
@@ -256,8 +207,8 @@ public class TouristAttractions extends PreferenceActivity {
 
                     add(new Attraction(
                             "Mevlana Moschee (Starpalast)",
-                            "Der ehemalige Starpalast ist nun die Mevlana Moschee",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Der ehemalige Starpalast ist nun die Mevlana Moschee.",
+                            "Der ehemalige Starpalast ist nun die Mevlana Moschee. Jimi Hendrix hatte im Starpalast einen Auftritt!",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Mevlana_Moschee.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Mevlana_Moschee.png"),
                             new LatLng(54.30995, 10.14668),
@@ -266,8 +217,8 @@ public class TouristAttractions extends PreferenceActivity {
 
                     add(new Attraction(
                             "Jüdische Gemeinde",
-                            "Jüdische Gemeinde Kiel und Region",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Jüdische Gemeinde Kiel und Region.",
+                            "Jüdische Gemeinde Kiel und Region.",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Juedische_Gemeinde.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Juedische_Gemeinde.png"),
                             new LatLng(54.31243, 10.14899),
@@ -276,8 +227,8 @@ public class TouristAttractions extends PreferenceActivity {
 
                     add(new Attraction(
                             "Villa Karlstal",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen.",
-                            "Das Zentrum Gaardens. Beliebter Treffpunkt aller Kulturen. Sed vitae bibendum justo, vitae cursus velit. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Villa Karlstal",
+                            "Villa Karlstal",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Villa_Karlstal.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Villa_Karlstal.png"),
                             new LatLng(54.31029, 10.14528),
@@ -288,19 +239,6 @@ public class TouristAttractions extends PreferenceActivity {
 
                 }});
 
-                /** vorerst auskommentiert, um Absturz zu vermeiden ...
-                put(CITY_WELLSEE, new ArrayList<Attraction>() {{
-                    add(new Attraction(
-                            "EMC",
-                            "Arbeiten in angespanntem Betriebsklima.",
-                            "Sie wollten schon immer in angespannter Atmosphäre Arbeiten?\n Mangelnde Qualität ist für Sie selbstverständlich?\n Ihnen mangelt es an Kompetenz und Führungsqualität?\n\n Dann freuen wir uns auf Ihre Bewerbungsunterlagen.",
-                            Uri.parse("https://lh5.googleusercontent.com/-7fb5ybQhUbo/VGLWjIL4RmI/AAAAAAAAACM/2jLe_msj_tk/w600-no/IMG_0049.JPG"),
-                            Uri.parse("https://lh3.googleusercontent.com/-EFEw6s7mT6I/VGLkCH4Xt4I/AAAAAAAAADY/ZlznhaQvb8E/w600-no/DSC_2775.JPG"),
-                            new LatLng(54.2843, 10.15473),
-                            CITY_WELLSEE
-                    ));
-                }});
-                 */
 
     }};
 
