@@ -20,7 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AttractionListFragment">
+    tools:context=".ui.AttractionListFragment">
 
     <com.example.meingaarden.ui.AttractionsRecyclerView
         android:id="@android:id/list"

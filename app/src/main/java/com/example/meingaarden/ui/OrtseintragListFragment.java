@@ -40,10 +40,11 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.meingaarden.R;
-import com.example.meingaarden.provider.FeedContract;
-import com.example.meingaarden.common.SyncUtils;
 import com.example.common.accounts.GenericAccountService;
+import com.example.meingaarden.R;
+import com.example.meingaarden.common.SyncUtils;
+//import com.example.meingaarden.provider.FeedContract;
+import com.example.meingaarden.provider.LocationsContract;
 
 /**
  * List fragment containing a list of Atom entry objects (articles) stored in the local database.
@@ -64,10 +65,10 @@ import com.example.common.accounts.GenericAccountService;
  * runs immediately. An indeterminate ProgressBar element is displayed, showing that the sync is
  * occurring.
  */
-public class EntryListFragment extends ListFragment
+public class OrtseintragListFragment extends ListFragment
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private static final String TAG = "EntryListFragment";
+    private static final String TAG = "OrtseintragListFragment";
 
     /**
      * Cursor adapter for controlling ListView results.
@@ -92,10 +93,12 @@ public class EntryListFragment extends ListFragment
      * Projection for querying the content provider.
      */
     private static final String[] PROJECTION = new String[]{
-            FeedContract.Entry._ID,
-            FeedContract.Entry.COLUMN_NAME_TITLE,
-            FeedContract.Entry.COLUMN_NAME_LINK,
-            FeedContract.Entry.COLUMN_NAME_PUBLISHED
+            LocationsContract.Ortseintrag._ID,
+            LocationsContract.Ortseintrag.COLUMN_NAME_NAME,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LINK,
+            LocationsContract.Ortseintrag.COLUMN_NAME_PUBLISHED,
+            LocationsContract.Ortseintrag.COLUMN_NAME_DESCRIPTION,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LONGDESCRIPTION
     };
 
     // Column indexes. The index of a column in the Cursor is the same as its relative position in
@@ -103,19 +106,25 @@ public class EntryListFragment extends ListFragment
     /** Column index for _ID */
     private static final int COLUMN_ID = 0;
     /** Column index for title */
-    private static final int COLUMN_TITLE = 1;
+    private static final int COLUMN_NAME = 1;
     /** Column index for link */
     private static final int COLUMN_URL_STRING = 2;
     /** Column index for published */
     private static final int COLUMN_PUBLISHED = 3;
+    /** Column index for published */
+    private static final int COLUMN_DESCRIPTION = 4;
+    /** Column index for published */
+    private static final int COLUMN_LONGDESCRIPTION = 5;
 
     /**
      * List of Cursor columns to read from when preparing an adapter to populate the ListView.
      */
     private static final String[] FROM_COLUMNS = new String[]{
-            FeedContract.Entry.COLUMN_NAME_TITLE,
-            FeedContract.Entry.COLUMN_NAME_LINK,
-            FeedContract.Entry.COLUMN_NAME_PUBLISHED
+            LocationsContract.Ortseintrag.COLUMN_NAME_NAME,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LINK,
+            LocationsContract.Ortseintrag.COLUMN_NAME_PUBLISHED,
+            LocationsContract.Ortseintrag.COLUMN_NAME_DESCRIPTION,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LONGDESCRIPTION
     };
 
     /**
@@ -124,13 +133,13 @@ public class EntryListFragment extends ListFragment
     private static final int[] TO_FIELDS = new int[]{
             android.R.id.text1,
             android.R.id.text2,
-            android.R.id.text2};
+            android.R.id.text1};
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public EntryListFragment() {}
+    public OrtseintragListFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -217,11 +226,11 @@ public class EntryListFragment extends ListFragment
         // We only have one loader, so we can ignore the value of i.
         // (It'll be '0', as set in onCreate().)
         return new CursorLoader(getActivity(),  // Context
-                FeedContract.Entry.CONTENT_URI, // URI
+                LocationsContract.Ortseintrag.CONTENT_URI, // URI
                 PROJECTION,                // Projection
                 null,                           // Selection
                 null,                           // Selection args
-                FeedContract.Entry.COLUMN_NAME_PUBLISHED + " desc"); // Sort
+                LocationsContract.Ortseintrag.COLUMN_NAME_PUBLISHED + " desc"); // Sort
     }
 
     /**
@@ -348,9 +357,9 @@ public class EntryListFragment extends ListFragment
                     // Test the ContentResolver to see if the sync adapter is active or pending.
                     // Set the state of the refresh button accordingly.
                     boolean syncActive = ContentResolver.isSyncActive(
-                            account, FeedContract.CONTENT_AUTHORITY);
+                            account, LocationsContract.CONTENT_AUTHORITY);
                     boolean syncPending = ContentResolver.isSyncPending(
-                            account, FeedContract.CONTENT_AUTHORITY);
+                            account, LocationsContract.CONTENT_AUTHORITY);
                     setRefreshActionButtonState(syncActive || syncPending);
                 }
             });

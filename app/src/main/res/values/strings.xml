@@ -155,5 +155,11 @@ appear further down your stream
     <string name="action_gallery">Gallery</string>
     <string name="pref_title_trigger_radius">Benachrichtigungs-Umkreis</string>
     <string name="pref_summary_trigger_radius">Umkreis für  Benachrichtigungen</string>
+    <string name="action_locationtest">locationtest</string>
+    <string name="title_activity_mein_gaarden1">Locations</string>
+    <string name="new_account_name">MeinKonto</string>
+    <string name="title_fmt">test</string>
+    <string name="key1_action">test</string>
+    <string name="key1_summary">test</string>
 
 </resources>

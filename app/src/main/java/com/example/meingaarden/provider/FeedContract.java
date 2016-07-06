@@ -60,6 +60,7 @@ public class FeedContract {
 
         /**
          * Fully qualified URI for "entry" resources.
+         * wird z.B. in der Datei SyncAdapter.java Zeile 229 verwendet
          */
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_ENTRIES).build();

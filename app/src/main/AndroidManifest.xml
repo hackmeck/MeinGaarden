@@ -149,7 +149,7 @@
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
-            <!-- This points to an XMLf ile which describes our account service. -->
+            <!-- This points to an XML file which describes our account service. -->
             <meta-data
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
@@ -185,6 +185,51 @@
             </intent-filter>
         </activity>
         <!-- Ende App Widget automatisch über AndroidStudio installiert -->
+
+        <!-- LocationsSyncAdapter -->
+        <!-- Main activity, responsible for showing a list of location entries. -->
+        <activity
+            android:name=".ui.OrtseintragListActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MeinGaarden"
+            android:theme="@style/AppTheme2" />
+
+        <!--
+        ContentProvider to store feed data.
+
+        The "authorities" here are defined as part of a ContentProvider interface. It's used here
+        as an attachment point for the SyncAdapter. See res/xml/syncadapter.xml and
+        SyncService.java.
+
+        Since this ContentProvider is not exported, it will not be accessible outside of this app's
+        package.
+        -->
+        <provider
+            android:name=".provider.LocationsProvider"
+            android:authorities="com.example.meingaarden1"
+            android:exported="false" />
+
+        <!--
+        This service implements our SyncAdapter. It needs to be exported, so that the system
+        sync framework can access it.
+        -->
+        <service
+            android:name=".service.LocationsSyncService"
+            android:label="@string/title_activity_mein_gaarden1"
+            android:exported="true">
+
+            <!--
+            This intent filter is required. It allows the system to launch our sync service
+            as needed.
+            -->
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <!-- This points to a required XML file which describes our SyncAdapter. -->
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/locationssyncadapter" />
+        </service>
     </application>
 
 </manifest>

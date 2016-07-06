@@ -16,11 +16,14 @@
 
 package com.example.meingaarden.provider;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.Uri;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.meingaarden.AppCompatPreferenceActivity;
@@ -41,6 +44,23 @@ import java.util.Map;
  * Static data content provider.
  */
 public class TouristAttractions extends PreferenceActivity {
+
+    public static final String TAG = "LocationsSyncAdapter";
+
+    private static final String[] PROJECTION = new String[] {
+            LocationsContract.Ortseintrag._ID,
+            LocationsContract.Ortseintrag.COLUMN_NAME_ORTSEINTRAG_ID,
+            LocationsContract.Ortseintrag.COLUMN_NAME_NAME,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LINK,
+            LocationsContract.Ortseintrag.COLUMN_NAME_PUBLISHED,
+            LocationsContract.Ortseintrag.COLUMN_NAME_DESCRIPTION,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LONGDESCRIPTION,
+            LocationsContract.Ortseintrag.COLUMN_NAME_IMAGEURL,
+            LocationsContract.Ortseintrag.COLUMN_NAME_SECONDARYIMAGEURL,
+            LocationsContract.Ortseintrag.COLUMN_NAME_LOCATION,
+            LocationsContract.Ortseintrag.COLUMN_NAME_CITY};
+
+
 
     public static final String CITY_SYDNEY = "Sydney";
     public static final String CITY_AHRENSBURG = "Ahrensburg";  // von flo
@@ -342,4 +362,6 @@ public class TouristAttractions extends PreferenceActivity {
         }
         return closestCity;
     }
+
+
 }

@@ -40,6 +40,7 @@ import com.example.meingaarden.ui.AttractionListActivity;
 import com.example.meingaarden.ui.EntryListActivity;
 import com.example.meingaarden.ui.HotSpotListActivity;
 import com.example.meingaarden.ui.HotSpotsListActivity;
+import com.example.meingaarden.ui.OrtseintragListActivity;
 
 public class MeinGaarden extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -124,6 +125,12 @@ public class MeinGaarden extends AppCompatActivity
         // Gallery
         if (id == R.id.action_gallery) {
             Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        // locationtest
+        if (id == R.id.action_locationtest) {
+            Intent intent = new Intent(this, OrtseintragListActivity.class);
             startActivity(intent);
             return true;
         }
