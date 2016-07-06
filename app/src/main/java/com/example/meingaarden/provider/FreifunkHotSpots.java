@@ -39,10 +39,9 @@ public class FreifunkHotSpots {
     public static final String TEST_CITY = CITY_SYDNEY;
 
     private static final float TRIGGER_RADIUS = 2000; // 2KM
-    //private static final float TRIGGER_RADIUS3 = Float.parseFloat("pref_key_trigger_radius");
-    //private static final Long TRIGGER_RADIUS2 = Long.valueOf("pref_key_trigger_radius");
+
     private static final Long TRIGGER_RADIUS2 = Long.getLong("pref_key_trigger_radius");
-    Long test = Long.valueOf("pref_key_gps_duration");
+
     private static final int TRIGGER_TRANSITION = Geofence.GEOFENCE_TRANSITION_ENTER |
             Geofence.GEOFENCE_TRANSITION_EXIT;
     private static final long EXPIRATION_DURATION = Geofence.NEVER_EXPIRE;
@@ -85,7 +84,7 @@ public class FreifunkHotSpots {
                     add(new Attraction(
                             "HotSpot BioGaarden",
                             "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
-                            "Freifunk HotSpot direkt im Herzen Gaardens. Gute Verweilmöglichkeiten in direkter Umgebung. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Vinetaplatz.png"),
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Vinetaplatz.png"),
                             new LatLng(54.31097, 10.14784),
