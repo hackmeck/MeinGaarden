@@ -312,8 +312,8 @@ public class TouristAttractions extends PreferenceActivity {
                 put(CITY_WELLSEE, new ArrayList<Attraction>() {{
                     add(new Attraction(
                             "EMC",
-                            "Arbeiten in angespanntem Betriebsklima.",
-                            "Sie wollten schon immer in angespannter Atmosphäre Arbeiten?\n Mangelnde Qualität ist für Sie selbstverständlich?\n Ihnen mangelt es an Kompetenz und Führungsqualität?\n\n Dann freuen wir uns auf Ihre Bewerbungsunterlagen.",
+                            "EMC",
+                            "EMC",
                             Uri.parse("https://lh5.googleusercontent.com/-7fb5ybQhUbo/VGLWjIL4RmI/AAAAAAAAACM/2jLe_msj_tk/w600-no/IMG_0049.JPG"),
                             Uri.parse("https://lh3.googleusercontent.com/-EFEw6s7mT6I/VGLkCH4Xt4I/AAAAAAAAADY/ZlznhaQvb8E/w600-no/DSC_2775.JPG"),
                             new LatLng(54.2843, 10.15473),
