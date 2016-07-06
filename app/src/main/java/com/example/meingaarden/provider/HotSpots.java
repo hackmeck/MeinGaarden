@@ -85,7 +85,7 @@ public class HotSpots {
                     add(new HotSpot(
                             "HotSpot BioGaarden",
                             "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
-                            "Freifunk HotSpot direkt im Herzen Gaardens. Gute Verweilmöglichkeiten in direkter Umgebung. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/BioGaarden.png"),
                             "http://flo.visionenundideen.de/AndroidTest/pictures/600x450/BioGaarden.png",
                             Uri.parse("http://flo.visionenundideen.de/AndroidTest/pictures/600x450/BioGaarden.png"),
@@ -95,8 +95,8 @@ public class HotSpots {
 
                     add(new HotSpot(
                             "HotSpot Sandkrug",
-                            "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
-                            "Freifunk HotSpot direkt im Herzen Gaardens. Gute Verweilmöglichkeiten in direkter Umgebung. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "HotSpot Sandkrug",
+                            "HotSpot Sandkrug",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
                             "http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
@@ -106,8 +106,8 @@ public class HotSpots {
 
                     add(new HotSpot(
                             "HotSpot ElisaKi",
-                            "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
-                            "Freifunk HotSpot direkt im Herzen Gaardens. Gute Verweilmöglichkeiten in direkter Umgebung. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "HotSpot ElisaKi",
+                            "HotSpot ElisaKi",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
                             "http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
@@ -117,8 +117,8 @@ public class HotSpots {
 
                     add(new HotSpot(
                             "HotSpot IltisKi",
-                            "Freifunk bei gemütlicher Einkaufs- und Kaffee-Atmosphäre.",
-                            "Freifunk HotSpot direkt im Herzen Gaardens. Gute Verweilmöglichkeiten in direkter Umgebung. Suspendisse potenti. Suspendisse scelerisque risus justo, non tincidunt nibh blandit et. Vivamus elit lacus, luctus nec erat in, pharetra semper turpis. Quisque viverra nulla ligula, non pulvinar ante dictum sit amet. Vestibulum aliquet tortor mauris, vel suscipit nisl malesuada eget. Aliquam maximus dictum euismod. Maecenas leo quam, volutpat id diam eget, placerat fringilla ipsum. Nam pretium vehicula augue quis euismod.\n\nNam sed blandit magna. Vestibulum a fermentum arcu. Vestibulum et ligula at nisi luctus facilisis. Proin fermentum enim a nibh commodo finibus. Suspendisse justo elit, vulputate ut ipsum at, pellentesque auctor massa. Praesent vestibulum erat interdum imperdiet dapibus. In hac habitasse platea dictumst. Proin varius orci vitae tempor vulputate.\n\nEtiam sed mollis orci. Integer et ex sed tortor scelerisque blandit semper id libero. Nulla facilisi. Pellentesque tempor magna eget massa ultrices, et efficitur lectus finibus.",
+                            "HotSpot IltisKi",
+                            "HotSpot IltisKi",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
                             "http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png",
                             Uri.parse("http://www.flo.visionenundideen.de/AndroidTest/pictures/600x450/Logo_Freifunk.png"),
