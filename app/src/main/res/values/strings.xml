@@ -161,5 +161,6 @@ appear further down your stream
     <string name="title_fmt">test</string>
     <string name="key1_action">test</string>
     <string name="key1_summary">test</string>
+    <string name="title_activity_emailclient">MailToDeveloper</string>
 
 </resources>

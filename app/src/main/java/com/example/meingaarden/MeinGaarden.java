@@ -37,6 +37,7 @@ import android.widget.Toast;
 import com.example.meingaarden.gallery.MainActivity;
 import com.example.meingaarden.ui.AppNewsListActivity;
 import com.example.meingaarden.ui.AttractionListActivity;
+import com.example.meingaarden.ui.EmailClientActivity;
 import com.example.meingaarden.ui.EntryListActivity;
 import com.example.meingaarden.ui.HotSpotListActivity;
 import com.example.meingaarden.ui.HotSpotsListActivity;
@@ -56,8 +57,10 @@ public class MeinGaarden extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, R.string.fab, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent intent = new Intent(MeinGaarden.this, EmailClientActivity.class);
+                startActivity(intent);
             }
         });
 

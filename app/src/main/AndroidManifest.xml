@@ -230,6 +230,24 @@
                 android:name="android.content.SyncAdapter"
                 android:resource="@xml/locationssyncadapter" />
         </service>
+
+        <!-- Mail To Developer -->
+        <activity
+            android:name=".ui.EmailClientActivity"
+            android:label="@string/title_activity_emailclient"
+            android:parentActivityName=".MeinGaarden"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAILTODEVELOPER" />
+            </intent-filter>
+            -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.meingaarden.MeinGaarden" />
+        </activity>
+        <!-- ende test -->
     </application>
 
 </manifest>
