@@ -14,6 +14,7 @@
         android:title="@string/pref_title_new_hotspotmessage_notifications" />
 
     <!-- TRIGGER-RADIUS -->
+    <!--
     <ListPreference
         android:key="pref_key_trigger_radius"
         android:summary="@string/pref_summary_trigger_radius"
@@ -22,6 +23,7 @@
         android:entries="@array/pref_triggerRadius_names"
         android:entryValues="@array/pref_triggerRadius_values"
         android:defaultValue="2000"/>
+        -->
 
     <!-- Allows the user to choose a ringtone in the 'notification' category. -->
     <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
