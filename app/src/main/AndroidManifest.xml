@@ -77,9 +77,6 @@
             android:parentActivityName=".gallery.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-
-
-
         <receiver android:name=".service.UtilityReceiver" />
 
         <service android:name=".service.UtilityService" />
@@ -178,13 +175,15 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/meingaarden_app_widget_info" />
         </receiver>
-
+        <!--
         <activity android:name=".MeinGaardenAppWidgetConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
+        -->
         <!-- Ende App Widget automatisch über AndroidStudio installiert -->
+
 
         <!-- LocationsSyncAdapter -->
         <!-- Main activity, responsible for showing a list of location entries. -->
@@ -215,15 +214,15 @@
         -->
         <service
             android:name=".service.LocationsSyncService"
-            android:label="@string/title_activity_mein_gaarden1"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/title_activity_mein_gaarden1">
 
             <!--
             This intent filter is required. It allows the system to launch our sync service
             as needed.
             -->
             <intent-filter>
-                <action android:name="android.content.SyncAdapter"/>
+                <action android:name="android.content.SyncAdapter" />
             </intent-filter>
             <!-- This points to a required XML file which describes our SyncAdapter. -->
             <meta-data
@@ -248,6 +247,17 @@
                 android:value="com.example.meingaarden.MeinGaarden" />
         </activity>
         <!-- ende test -->
+
+        <!-- 2. AppWidget -->
+        <receiver android:name=".NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
     </application>
 
 </manifest>
