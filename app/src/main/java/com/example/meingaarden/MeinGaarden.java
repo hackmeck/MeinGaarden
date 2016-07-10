@@ -176,10 +176,12 @@ public class MeinGaarden extends AppCompatActivity
             Intent intent = new Intent(this, AppNewsListActivity.class);
             startActivity(intent);
             return true;
+            /**
         } else if (id == R.id.nav_share) {
             confirmFireMissiles();
         } else if (id == R.id.nav_send) {
-            confirmFireMissiles();
+            confirmFireMissiles(); */
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

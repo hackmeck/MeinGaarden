@@ -34,7 +34,7 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/nav_gallery" />
     </group>
-
+    <!--
     <item android:title="@string/nav_title_communicate">
         <menu>
             <item
@@ -47,5 +47,5 @@
                 android:title="@string/nav_send" />
         </menu>
     </item>
-
+    -->
 </menu>
