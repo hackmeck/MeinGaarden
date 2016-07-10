@@ -15,14 +15,13 @@
   limitations under the License.
   -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="com.example.meingaarden.MeinGaardenAppWidgetConfigureActivity"
-    android:initialKeyguardLayout="@layout/meingaarden_app_widget"
-    android:initialLayout="@layout/meingaarden_app_widget"
-    android:minHeight="40dp"
-    android:minWidth="40dp"
-    android:previewImage="@drawable/example_appwidget_preview"
+    android:initialKeyguardLayout="@layout/new_app_widget"
+    android:initialLayout="@layout/new_app_widget"
+    android:minHeight="125dp"
+    android:minWidth="250dp"
     android:resizeMode="horizontal|vertical"
-    android:updatePeriodMillis="60000"
+    android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen">
-
+    <!--android:configure="com.example.meingaarden.MeinGaardenAppWidgetConfigureActivity"-->
+    <!--android:previewImage="@drawable/example_appwidget_preview"-->
 </appwidget-provider>
