@@ -1,11 +1,16 @@
 package com.example.meingaarden.gallery;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ActionProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,10 +18,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+//import android.widget.ShareActionProvider;
+//import android.widget.ShareActionProvider;
 
 import com.bumptech.glide.Glide;
 import com.example.meingaarden.R;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
@@ -30,6 +38,8 @@ public class DetailActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+
+    private static ShareActionProvider mShareActionProvider; // von Flo für Easy Share Action
 
     public ArrayList<ImageModel> data = new ArrayList<>();
     int pos;
@@ -52,7 +62,9 @@ public class DetailActivity extends AppCompatActivity {
         data = getIntent().getParcelableArrayListExtra("data");
         pos = getIntent().getIntExtra("pos", 0);
 
-        setTitle(data.get(pos).getName());
+        String test = "Test"; // Testkonstrukt
+
+        setTitle(data.get(pos).getName() + test); // Testkonstrukt
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -74,7 +86,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
 
                 //noinspection ConstantConditions
-                setTitle(data.get(position).getName());
+                setTitle(data.get(position).getName() + "neu"); // Testkonstrukt
 
             }
 
@@ -92,6 +104,28 @@ public class DetailActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_detail, menu);
+
+
+        // von flo für Easy Share Action
+        // Locate MenuItem with ShareActionProvider
+        MenuItem item = menu.findItem(R.id.menu_item_share);
+
+        // von flo für Easy Share Action
+        // Fetch and store ShareActionProvider
+        ShareActionProvider myShareActionProvider =
+                (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+
+        Intent myShareIntent= new Intent(Intent.ACTION_SEND);
+        myShareIntent.setType("image/*");
+        myShareIntent.putExtra(Intent.EXTRA_STREAM, "http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Vinetaplatz.png");
+        myShareIntent.setType("text/plain");
+        myShareIntent.putExtra(Intent.EXTRA_TEXT, "Test Test Test");
+        //Uri uri = Uri.fromFile(new File(getFilesDir(), "http://flo.visionenundideen.de/AndroidTest/pictures/600x450/Vinetaplatz.png"));
+        //myShareIntent.putExtra(Intent.EXTRA_STREAM, uri.toString());
+
+        myShareActionProvider.setShareIntent(myShareIntent);
+
+        //Return to true to display menu
         return true;
     }
 
@@ -108,6 +142,14 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // Von flo für Easy Share Action
+    // Call to update the share intent
+    private void setShareIntent(Intent shareIntent){
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(shareIntent);
+        }
     }
 
 
@@ -196,6 +238,15 @@ public class DetailActivity extends AppCompatActivity {
             final ImageView imageView = (ImageView) rootView.findViewById(R.id.detail_image);
 
             Glide.with(getActivity()).load(url).thumbnail(0.1f).into(imageView);
+
+
+
+
+
+            // von flo für Easy Share Action
+            // Fetch and store ShareActionProvider
+
+
 
             return rootView;
         }
