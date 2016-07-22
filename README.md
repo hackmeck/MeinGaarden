@@ -18,3 +18,5 @@ Features:
 
 Getestet mit Android 4.4.2 und 6.0
 
+Release: https://github.com/hackmeck/MeinGaarden/releases/tag/v1.1.0
+
